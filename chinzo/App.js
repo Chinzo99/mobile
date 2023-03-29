@@ -1,35 +1,42 @@
-import { StyleSheet, View, SafeAreaView, Platform, StatusBar, Image, Text } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Platform, StatusBar, Image, Text, ScrollView } from 'react-native';
 import { MaterialCommunityIcons, Entypo } from 'react-native-vector-icons';
 
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.view1}>
-        <Text style={styles.text1}>my App </Text>
-        <MaterialCommunityIcons name="ticket-percent" style={styles.icon1}></MaterialCommunityIcons>
-        <Image source={require("./assets/kak.png")} style={styles.proimg} />
+      <ScrollView>
+        <View style={styles.view1}>
+          <Text style={styles.text1}>my App </Text>
+          <MaterialCommunityIcons name="ticket-percent" style={styles.icon1}></MaterialCommunityIcons>
+          <Image source={require("./assets/kak.png")} style={styles.proimg} />
 
-      </View>
-      <View style={styles.view2}>
-        <View style={styles.box1}>
-          <Text style={styles.boxtxt}>товч ном</Text>
-          <Entypo name="triangle-down"></Entypo>
         </View>
-        <View style={styles.box2}>
-          <Text style={styles.boxtxt}>цахим ном</Text>
-          <Entypo name="triangle-left"></Entypo>
-        </View>
-        <View style={styles.box3}>
-          <Text style={styles.boxtxt}>аудио ном</Text>
-          <Entypo name="triangle-right"></Entypo>
-        </View>
-        <View style={styles.box4}>
-          <Text style={styles.boxtxt}>подкаст </Text>
-          <Entypo name="triangle-up"></Entypo>
-        </View>
+        <View style={styles.view2}>
+          <View style={styles.box1}>
+            <Text style={styles.boxtxt}>товч ном</Text>
+            <Entypo name="triangle-down"></Entypo>
+          </View>
+          <View style={styles.box2}>
+            <Text style={styles.boxtxt}>цахим ном</Text>
+            <Entypo name="triangle-left"></Entypo>
+          </View>
+          <View style={styles.box3}>
+            <Text style={styles.boxtxt}>аудио ном</Text>
+            <Entypo name="triangle-right"></Entypo>
+          </View>
+          <View style={styles.box4}>
+            <Text style={styles.boxtxt}>подкаст </Text>
+            <Entypo name="triangle-up"></Entypo>
+          </View>
 
-      </View>
+        </View>
+        <View style={styles.view3}>
+          <Text style={styles.txt2}>Аймшгийн зохиол </Text>
+          <Text style={styles.txt3}>Энэ 7 хоногийн онцлох </Text>
+          <Image source={require("./assets/icon.png")} style={styles.Image} />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -104,8 +111,30 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   boxicons: {
+    fontSize: 35,
+    color: "white",
+  },
+  view3: {
+    width: 380,
+    height: 700,
+    backgroundColor: "white",
+    borderRadius: 20,
+    margin: 14,
+    overflow: 'hidden', 
+  },
+  txt2:{
+    fontSize: 15,
+    color: "grey",
+    textTransform: 'uppercase',
+  },
+  txt3:{
     fontSize: 35, 
-    color: "white", 
-
+    fontWeight: 'bold', 
+    margin: 20, 
+  },
+  Image:{
+    resizeMode: "stretch",
+    flex: 1, 
+    width: "100%",
   }
 });
